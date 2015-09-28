@@ -1,0 +1,8 @@
+Tools:
+Add XY "coordinates: will add dd XY Coordinates is most 
+commonly used to get access to point features to perform analysis or to extract points based on their x,y location."
+Dissole:dd XY Coordinates is most commonly used to get access 
+to point features to perform analysis or to extract points based on their x,y location.
+Questions:
+What are required parameters? in_feature_out_feature Classes
+Optional parameters? Disolve_field, Statistical_field, 
