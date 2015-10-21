@@ -1,21 +1,13 @@
-import arcpy
-from arcpy import env
-env.workspace = "P:/PythonHomeWork/Data/Exercise08"
-fc = "Hawaii.shp"
-fc = r"P:/PythonHomeWork/Data/Exercise08/Hawaii.shp"
-cursor = arcpy.da.SearchCursor(fc, ["OID@","SHAPE@","SHAPE@AREA","SHAPE@LENGTH"])
-units = arcpy.Describe(fc).spatialReference.linearUnitName
- 
- 
-for row in cursor:
-    print "Total Area: ", row[2]
-    print("Feature {0}: ".format(row[0]))
-    partnum = 0
-    perimeter = 0
-    for part in row[1]:
-        print("Part {0}: ".format(partnum))
-        for point in part:
-            perimeter += row[3]
-        partnum += 1
-        #print "Area: ", row[2]
-        print "Perimeter: ", perimeter, units
+def chlng2():
+    import arcpy, os, sys
+    from arcpy import env
+    env.workspace = "P:/Python/Data/Exercise09"
+    outpath = "P:/Python/Data/Exercise09/Results/"
+    outname = "rasters.gdb"
+    arcpy.CreateFileGDB_management(outpath, outname)
+    
+    rasters = arcpy.ListRasters("*", "TIFF")
+    for raster in rasters:
+        rastdesc = arcpy.Describe(raster)
+        rastname = rstdesc.basename
+        arcpy.CopyRaster_management(raster, "P:/PythonHomeWork/Data/Exercise09/Results/newdata.gdb/" + rastname)
