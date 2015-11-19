@@ -1,9 +1,9 @@
 ### I WILL REFERENCE EVERYTHING I HAVE FOUND ONLINE
 ### my funtions are running together the parameters need to match through
 ###out the game inorder for the board to correspond to players input
-board =[]
-
-board = [4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4, 5,
+import sys
+def print_board(number):
+    board = [4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4, 5,
     0, 3, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 3, 0, 5,
     0, 0, 3, 0, 0, 0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 5,
     1, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 1, 5,
@@ -20,24 +20,22 @@ board = [4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4, 5,
     4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 4] ### This is the exact board(Found online)
 
 
-import sys
-
-for k in board:
-    if k == 5:
+for number in print_board(number):
+    if number == 5:
         print'\n\n',
-    elif k == 4:
+    elif number == 4:
         print(' TW', 'attrs=[]', 'end = ' '')
     #print 'TW',
-    elif k == 3:
+    elif number == 3:
         print(' DW', 'attrs=[]', 'end = ' '')
     #print 'DW',
-    elif k == 2:
+    elif number == 2:
         print(' TL', 'attrs=[]', 'end = ' '')
     #print 'TL',
-    elif k == 1:
+    elif number == 1:
         print(' DL', 'attrs=[]', 'end = ' '')
     #print 'DL',
-    elif k == 0:
+    elif number == 0:
         print '___', ####WHY IS IT NOT PRINTING ON SCALE(Also found online)
 
 
